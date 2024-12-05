@@ -1,0 +1,18 @@
+:root {
+    --main-bg-color: #ffffff;
+    --white: #ffffff;
+    --primary: #FF4545;
+    --secondary: #FF9C73;
+    --tertiary: #FBD288;
+    --quaternary: #FCF596;
+    --success: black;
+    --error: black;
+}
+
+html body{
+    margin: 0;
+    padding:0 ;
+    background-color: var(--main-bg-color);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif
+}
