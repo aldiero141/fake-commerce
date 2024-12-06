@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="sub-header">
+    <div class="sub-header logo" @click="handleHomeNavigation">
       <img
         src="~/assets/images/logo.png"
         alt="logo"
@@ -19,8 +19,8 @@
         </div>
       </div>
       <div class="buttons">
-        <Button text="Login" variant="secondary" />
-        <Button text="Register" variant="primary" />
+        <Button variant="secondary">Login</Button>
+        <Button variant="primary">Register</Button>
       </div>
     </div>
   </div>
@@ -50,6 +50,10 @@ const path = [
 ];
 
 const search = ref("");
+
+const handleHomeNavigation = () => {
+  navigateTo("/");
+};
 </script>
 
 <style lang="scss" scoped>
@@ -98,7 +102,28 @@ const search = ref("");
   border-left: 1px solid #f2f2f2;
 }
 
+.logo {
+  cursor: pointer;
+}
+
 h1 {
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    min-height: 5em;
+  }
+  .buttons {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .logo {
+    h1 {
+      display: none;
+    }
+  }
 }
 </style>

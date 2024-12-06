@@ -17,7 +17,11 @@
       <Transition name="fade" mode="out-in">
         <div v-if="loading" class="loader"></div>
         <div v-else class="container-grid">
-          <Card v-for="item in items" class="product-card">
+          <Card
+            v-for="item in items"
+            class="product-card"
+            @click="handleItemClick(item.id)"
+          >
             <div class="image">
               <img :src="item.image" class="img" />
             </div>
@@ -71,17 +75,21 @@ const fetchData = async () => {
   }
 };
 
-watch(tab, () => {
-  fetchData();
+watch(tab, async () => {
+  await fetchData();
 });
 
 const handleNavigation = (e: string) => {
   tab.value = e;
 };
 
-onMounted(() => {
-  nextTick(() => {
-    fetchData();
+const handleItemClick = (id: number) => {
+  navigateTo(`/details/${id}`);
+};
+
+onMounted(async () => {
+  nextTick(async () => {
+    await fetchData();
 
     setInterval(() => {
       if (!carouselRef.value) return;

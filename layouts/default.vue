@@ -23,6 +23,6 @@ import Header from "~/components/global/Header.vue";
   flex-direction: column;
   align-items: center;
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100vh - 10em);
 }
 </style>
