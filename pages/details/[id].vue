@@ -113,6 +113,7 @@ const handleButtonAddToCart = () => {
     store.addToCart(item.value as IProduct);
   }
   localStorage.setItem("cart", JSON.stringify(cart.value));
+  navigateTo("/cart");
 };
 
 // const quantityErrorMessage = computed(() => {
