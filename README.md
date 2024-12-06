@@ -1,6 +1,7 @@
 # Nuxt Minimal Starter
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Lovely E-Commerce Online Store
+Created using Nuxt 3 and Vue 3
 
 ## Setup
 
