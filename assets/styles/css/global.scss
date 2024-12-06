@@ -1,12 +1,13 @@
 :root {
-    --main-bg-color: #ffffff;
+    --main-bg-color: #F9ECF4;
+    --secondary-bg-color: #fdf8fb;
     --white: #ffffff;
-    --primary: #FF4545;
-    --secondary: #FF9C73;
-    --tertiary: #FBD288;
-    --quaternary: #FCF596;
+    --primary: #fb6f92;
+    --secondary: #ffb3c6;
+    --tertiary: #ffe5ec;
     --success: black;
     --error: black;
+    --font: #FA3D6C;
 }
 
 html body{
@@ -14,5 +15,11 @@ html body{
     padding:0 ;
     background-color: var(--main-bg-color);
     font-size: 16px;
+    color: var(--font);
     font-family: Arial, Helvetica, sans-serif
 }
+
+h4 {
+    font-weight: 700;
+    font-size: 0.75rem;
+  }

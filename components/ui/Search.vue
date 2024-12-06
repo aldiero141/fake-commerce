@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <Icon name="ic:round-search" style="color: black" />
+    <Icon name="ic:round-search" style="color: var(--primary)" />
     <input
       :type="props.type"
       :value="props.modelValue"
@@ -13,7 +13,14 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps(["modelValue", "label", "name", "type"]);
+const props = defineProps([
+  "modelValue",
+  "label",
+  "name",
+  "type",
+  "placeholder",
+  "error",
+]);
 const emit = defineEmits(["update:modelValue"]);
 </script>
 
@@ -23,14 +30,25 @@ const emit = defineEmits(["update:modelValue"]);
   align-items: center;
   gap: 1em;
   border-radius: 0.5em;
-  border: 1px solid #dfdfdf;
+  border: 1px solid var(--tertiary);
   padding: 0.25em 0.5em;
+  width: 100%;
   input {
+    width: 100%;
     outline: none;
     border: none;
+    background-color: transparent;
     & :focus {
       outline: none;
       border: none;
+    }
+    &::placeholder {
+      color: var(--secondary);
+      opacity: 1;
+    }
+    &::-ms-input-placeholder {
+      /* Edge 12 -18 */
+      color: red;
     }
   }
 }

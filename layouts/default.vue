@@ -1,19 +1,24 @@
 <template>
-  <v-app>
+  <div class="main">
     <Header />
-    <v-main class="main">
+    <v-main class="body">
       <slot />
     </v-main>
     <Footer />
-  </v-app>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import Header from "~/components/global/header.vue";
+import Header from "~/components/global/Header.vue";
 </script>
 
 <style lang="scss" scoped>
 .main {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+}
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;

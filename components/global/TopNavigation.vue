@@ -17,6 +17,7 @@
 const emit = defineEmits(["navigate"]);
 const isActive = ref<number>(0);
 const categories: string[] = [
+  "all",
   "electronics",
   "jewelery",
   "men's clothing",
@@ -35,9 +36,9 @@ const handleClick = (index: number) => {
   min-width: 100vw;
   flex-direction: row;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--secondary-bg-color);
   color: var(--black);
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid var(--tertiary);
   margin-bottom: 1em;
 
   .nav-item {
@@ -48,9 +49,13 @@ const handleClick = (index: number) => {
       text-transform: capitalize;
       color: var(--black);
       font-size: 1rem;
-      border-bottom: 2px solid var(--white);
+      border-bottom: 2px solid var(--secondary-bg-color);
       &-active {
         border-bottom: 2px solid var(--primary);
+      }
+      &:hover {
+        color: var(--secondary);
+        cursor: pointer;
       }
     }
   }
@@ -60,7 +65,7 @@ const handleClick = (index: number) => {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--secondary-bg-color);
   color: var(--black);
   font-size: 1rem;
 }
