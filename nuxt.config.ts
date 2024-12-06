@@ -9,10 +9,9 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/': { ssr: false },
-    '/products': { ssr: false },
-   
-    '/details/**': { ssr: false },
+    '/': { ssr: true },
+    '/products': { ssr: true },
+    '/details/**': { ssr: true },
   },
 
   css: ['~/assets/styles/css/global.scss'],
