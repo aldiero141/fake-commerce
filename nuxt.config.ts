@@ -9,12 +9,12 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/': { ssr: true },
-    '/products': { ssr: true },
+    '/': { ssr: false },
+    '/products': { ssr: false },
    
-    '/details/**': { ssr: true },
+    '/details/**': { ssr: false },
   },
 
   css: ['~/assets/styles/css/global.scss'],
-  modules: ['@nuxt/icon', '@nuxt/ui', '@nuxt/image'],
+  modules: ['@nuxt/icon', '@nuxt/ui', '@nuxt/image', '@pinia/nuxt'],
 })

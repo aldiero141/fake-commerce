@@ -48,7 +48,11 @@
                 /></Button>
               </div>
               <div class="buttons">
-                <Button variant="secondary" :style="'font-size: 0.75em'">
+                <Button
+                  variant="secondary"
+                  :style="'font-size: 0.75em'"
+                  @click="handleButtonAddToCart"
+                >
                   <Icon
                     name="material-symbols:garden-cart-rounded"
                     style="color: var(--white); margin-right: 0.5em"
@@ -68,13 +72,19 @@
 </template>
 
 <script lang="ts" setup>
+import { storeToRefs } from "pinia";
+import { useProductsStore } from "~/store/products";
 import Button from "~/components/ui/Button.vue";
 import Input from "~/components/ui/Input.vue";
 import type { IProduct } from "~/model/product";
 
+const store = useProductsStore();
 const route = useRoute();
 const item = ref<IProduct>();
 const quantity = ref<number>(1);
+const { cart } = storeToRefs(store);
+
+store.getCart();
 
 const fetchData = async () => {
   const { data } = await useFetch(
@@ -96,6 +106,13 @@ const handleButtonQuantity = (type: string) => {
       ? (quantity.value = Number(quantity.value) - 1)
       : null;
   }
+};
+
+const handleButtonAddToCart = () => {
+  for (let i = 0; i < quantity.value; i++) {
+    store.addToCart(item.value as IProduct);
+  }
+  localStorage.setItem("cart", JSON.stringify(cart.value));
 };
 
 // const quantityErrorMessage = computed(() => {

@@ -19,6 +19,12 @@
         </div>
       </div>
       <div class="buttons">
+        <Button variant="tertiary" @click="handleButtonToCart"
+          ><Icon
+            class="icon"
+            name="material-symbols:garden-cart-rounded"
+            style="color: var(--primary); margin-right: 0.5em"
+        /></Button>
         <Button variant="secondary">Login</Button>
         <Button variant="primary">Register</Button>
       </div>
@@ -43,16 +49,16 @@ const path = [
     name: "About",
     to: "/about",
   },
-  {
-    name: "Customer Support",
-    to: "/customer-support",
-  },
 ];
 
 const search = ref("");
 
 const handleHomeNavigation = () => {
   navigateTo("/");
+};
+
+const handleButtonToCart = () => {
+  return navigateTo("/cart");
 };
 </script>
 
@@ -110,19 +116,27 @@ h1 {
   font-size: 1rem;
 }
 
+.icon {
+  margin: 0 !important;
+  padding: 0 0.75em;
+}
+
 @media only screen and (max-width: 500px) {
   .header {
     min-height: 5em;
+    flex-direction: column;
+    gap: 0.5em;
   }
   .buttons {
-    display: none;
+    border-left: none;
   }
-  .menu {
-    display: none;
-  }
-  .logo {
-    h1 {
-      display: none;
+  .sub-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    .menu {
+      display: flex;
+      flex-direction: row;
     }
   }
   .searchbar {
