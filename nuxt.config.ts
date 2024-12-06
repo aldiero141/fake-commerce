@@ -8,6 +8,13 @@ export default defineNuxtConfig({
       
     }
   },
+  routeRules: {
+    '/': { ssr: true },
+    '/products': { ssr: true },
+   
+    '/details/**': { ssr: true },
+  },
+
   css: ['~/assets/styles/css/global.scss'],
   modules: ['@nuxt/icon', '@nuxt/ui', '@nuxt/image'],
 })

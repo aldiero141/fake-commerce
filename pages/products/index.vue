@@ -1,11 +1,11 @@
 <template>
   <div>
-    <UnderConstruction />
+    <Products />
   </div>
 </template>
 
 <script lang="ts" setup>
-import UnderConstruction from "~/components/global/UnderConstruction.vue";
+import Products from "~/components/global/Products.vue";
 </script>
 
 <style></style>

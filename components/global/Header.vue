@@ -9,7 +9,7 @@
       />
       <h1 style="color: var(--primary)">Lovely Online Shop</h1>
     </div>
-    <div class="sub-header" style="width: 35em">
+    <div class="sub-header searchbar" style="width: 35em">
       <Search v-model="search" placeholder="Search Items" />
     </div>
     <div class="sub-header">
@@ -124,6 +124,9 @@ h1 {
     h1 {
       display: none;
     }
+  }
+  .searchbar {
+    width: 80vw !important;
   }
 }
 </style>

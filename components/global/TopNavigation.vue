@@ -77,4 +77,22 @@ const handleClick = (index: number) => {
 h1 {
   font-size: 1rem;
 }
+
+@media only screen and (max-width: 500px) {
+  .navigation {
+    height: 4em;
+    border: none;
+    .nav-item {
+      height: 100%;
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}
 </style>
